@@ -13,6 +13,7 @@ import com.arun.geeksforgeektask.Utility.GlideRequests
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.FitCenter
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 
 import kotlinx.android.synthetic.main.feed_row_layout.view.*
@@ -63,8 +64,8 @@ class NewsFeedAdapter(
         glideRequests.load(newUrl)
             .placeholder(ColorDrawable(Color.GRAY))
             .error(ColorDrawable(Color.GRAY))
-            .thumbnail(glideRequests.load(newUrl).override(300).transform(CenterCrop()))
-            .transform(CenterCrop())
+            .thumbnail(glideRequests.load(newUrl).override(300).transform(RoundedCorners(12)))
+            .transform(RoundedCorners(12))
             .transition(DrawableTransitionOptions.withCrossFade())
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .into(holder.itemView.thumb)
