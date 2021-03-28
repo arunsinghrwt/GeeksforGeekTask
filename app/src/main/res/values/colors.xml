@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="darkGrey">#565F61</color>
+    <color name="white">#ffffff</color>
+    <color name="new_bg">#080b0c</color>
+    <color name="searchBackground">#f0f0f0</color>
+    <color name="green">#419443</color>
+
+</resources>
