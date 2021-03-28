@@ -16,11 +16,9 @@ import org.koin.core.context.startKoin
  **/
 
 class BaseApplication : MultiDexApplication() {
-
-
     override fun onCreate() {
         super.onCreate()
-        //init koin
+        //koin intalize
         startKoin {
             androidLogger()
             androidContext(applicationContext)

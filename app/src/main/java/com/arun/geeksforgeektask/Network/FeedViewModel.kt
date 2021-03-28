@@ -18,11 +18,9 @@ import io.reactivex.rxjava3.schedulers.Schedulers
  **/
 
 class FeedViewModel (var apiInterface: ApiInterface) : ViewModel() {
-
     var mediatorList = MediatorLiveData<ResponseModel>()
     fun getFeedList() {
         var list = LiveDataReactiveStreams.fromPublisher(
-
             apiInterface.fetchDetails("https://www.abc.net.au/news/feed/4570058/rss.xml")!!.onErrorReturn {
                 ResponseModel().apply {
                     Log.e("error","--->>"+it.cause )
@@ -39,7 +37,6 @@ class FeedViewModel (var apiInterface: ApiInterface) : ViewModel() {
                 }
             }.subscribeOn(Schedulers.io())
         )
-
         mediatorList.addSource(list){
                 t ->
             mediatorList.value = t
